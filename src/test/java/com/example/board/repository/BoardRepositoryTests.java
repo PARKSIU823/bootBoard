@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.Optional;
 import java.util.stream.IntStream;
 
 @SpringBootTest
@@ -33,4 +34,21 @@ public class BoardRepositoryTests {
         });
     }
 
+    //수정 처리 테스트
+    @Test
+    public void updateTest(){
+
+        Optional<Board> result = boardRepository.findById(500);
+
+        if(result.isPresent()){
+
+            Board board = result.get();
+
+            board.modTitle("제목 수정 updateTest");
+            board.modContent("글 내용 수정 updateTest");
+
+            boardRepository.save(board);
+        }
+
+    }
 }
