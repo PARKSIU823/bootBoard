@@ -31,10 +31,10 @@ public class Board extends BaseEntity{
     private String writer;
 
     @Column
-    private char replyCnt;
+    private int replyCnt;
 
     @Column
-    private char recmmndCnt;
+    private int recmmndCnt;
 
     @Column
     private char delYn;
