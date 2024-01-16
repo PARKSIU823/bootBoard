@@ -39,6 +39,9 @@ public class Board extends BaseEntity{
     @Column
     private char delYn;
 
+    @Column
+    private char noticeYn;
+
     //글 제목 수정
     public void modTitle(String title) {
         this.title = title;
